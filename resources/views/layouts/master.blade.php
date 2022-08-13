@@ -77,8 +77,8 @@
                         <div class="collapse" id="users" aria-labelledby="headingOne"
                             data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="layout-static.html">All Users</a>
-                                <a class="nav-link" href="layout-sidenav-light.html">Add User</a>
+                                <a class="nav-link" href="{{ route('users.index') }}">All Users</a>
+                                <a class="nav-link" href="{{ route('users.create') }}">Add User</a>
                             </nav>
                         </div>
 
