@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\CountriesController;
 use App\Http\Controllers\Admin\UsersController;
 use Illuminate\Support\Facades\Route;
 
@@ -21,4 +22,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::resource('users', UsersController::class);
+
+Route::group(['middleware' => ['auth:sanctum']], function () {
+
+    Route::resource('users', UsersController::class);
+    Route::resource('countries', CountriesController::class);
+});

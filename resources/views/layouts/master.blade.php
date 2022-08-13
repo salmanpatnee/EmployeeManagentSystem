@@ -91,7 +91,7 @@
                         <div class="collapse" id="system" aria-labelledby="headingOne"
                             data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="layout-static.html">Countries</a>
+                                <a class="nav-link" href="{{ route('countries.index') }}">Countries</a>
                                 <a class="nav-link" href="layout-sidenav-light.html">States</a>
                                 <a class="nav-link" href="layout-sidenav-light.html">Cities</a>
                                 <a class="nav-link" href="layout-sidenav-light.html">Departments</a>

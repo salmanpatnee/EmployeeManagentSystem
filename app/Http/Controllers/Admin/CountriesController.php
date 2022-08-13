@@ -3,14 +3,13 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\UserStoreRequest;
-use App\Http\Requests\UserUpdateRequest;
-use App\Models\User;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
+use App\Http\Requests\CountryStoreRequest;
+use App\Http\Requests\CountryUpdateRequest;
+use App\Models\Country;
 
-class UsersController extends Controller
+class CountriesController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
@@ -20,10 +19,10 @@ class UsersController extends Controller
     {
         $term = request('search', '');
 
-        $users = User::search($term)
+        $countries = Country::search($term)
             ->paginate(10);
 
-        return view('admin.users.index', compact('users'));
+        return view('admin.countries.index', compact('countries'));
     }
 
     /**
@@ -33,7 +32,7 @@ class UsersController extends Controller
      */
     public function create()
     {
-        return view('admin.users.create');
+        return view('admin.countries.create');
     }
 
     /**
@@ -42,11 +41,11 @@ class UsersController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(UserStoreRequest $request)
+    public function store(CountryStoreRequest $request)
     {
-        User::create($request->all());
+        Country::create($request->all());
 
-        return redirect()->route('users.index')->with('status', 'User added!');
+        return redirect()->route('countries.index')->with('status', 'Country added!');
     }
 
     /**
@@ -66,9 +65,9 @@ class UsersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(User $user)
+    public function edit(Country $country)
     {
-        return view('admin.users.edit', compact('user'));
+        return view('admin.countries.edit', compact('country'));
     }
 
     /**
@@ -78,13 +77,13 @@ class UsersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(UserUpdateRequest $request, User $user)
+    public function update(CountryUpdateRequest $request, Country $country)
     {
-        $this->authorize('update', $user);
+        $this->authorize('update', $country);
 
-        $user->update($request->all());
+        $country->update($request->all());
 
-        return redirect()->route('users.index')->with('status', 'User updated!');
+        return redirect()->route('countries.index')->with('status', 'Country updated!');
     }
 
     /**
@@ -93,12 +92,12 @@ class UsersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(User $user)
+    public function destroy(Country $country)
     {
-        $this->authorize('delete', $user);
+        $this->authorize('delete', $country);
 
-        $user->delete();
+        $country->delete();
 
-        return redirect()->route('users.index')->with('status', 'User deleted!');
+        return redirect()->route('countries.index')->with('status', 'Country deleted!');
     }
 }
