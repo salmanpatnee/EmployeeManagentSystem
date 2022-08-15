@@ -23,4 +23,9 @@ class Country extends Model
                 ->orWhere('name', 'like', $term);
         });
     }
+
+    public function states()
+    {
+        return $this->hasMany(State::class);
+    }
 }

@@ -92,8 +92,8 @@
                             data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
                                 <a class="nav-link" href="{{ route('countries.index') }}">Countries</a>
-                                <a class="nav-link" href="layout-sidenav-light.html">States</a>
-                                <a class="nav-link" href="layout-sidenav-light.html">Cities</a>
+                                <a class="nav-link" href="{{ route('states.index') }}">States</a>
+                                <a class="nav-link" href="{{ route('cities.index') }}">Cities</a>
                                 <a class="nav-link" href="layout-sidenav-light.html">Departments</a>
                             </nav>
                         </div>
