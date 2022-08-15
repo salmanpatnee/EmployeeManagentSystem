@@ -94,7 +94,7 @@
                                 <a class="nav-link" href="{{ route('countries.index') }}">Countries</a>
                                 <a class="nav-link" href="{{ route('states.index') }}">States</a>
                                 <a class="nav-link" href="{{ route('cities.index') }}">Cities</a>
-                                <a class="nav-link" href="layout-sidenav-light.html">Departments</a>
+                                <a class="nav-link" href="{{ route('departments.index') }}">Departments</a>
                             </nav>
                         </div>
                     </div>
