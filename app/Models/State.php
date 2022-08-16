@@ -11,6 +11,8 @@ class State extends Model
 
     protected $fillable = ['country_id', 'name'];
 
+    protected $with = ['cities'];
+
     public function country()
     {
         return $this->belongsTo(Country::class);

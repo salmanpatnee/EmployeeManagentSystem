@@ -63,7 +63,7 @@
                         <div class="collapse" id="employees" aria-labelledby="headingOne"
                             data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="layout-static.html">All Employees</a>
+                                <a class="nav-link" href="/employees">All Employees</a>
                                 <a class="nav-link" href="layout-sidenav-light.html">Add Employee</a>
                             </nav>
                         </div>

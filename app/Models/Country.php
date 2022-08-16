@@ -14,6 +14,8 @@ class Country extends Model
         'name'
     ];
 
+    protected $with = ['states'];
+
     public function scopeSearch($query, $term)
     {
         $term = "%$term%";

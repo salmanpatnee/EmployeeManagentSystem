@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\DepartmentStoreRequest;
 use App\Models\Department;
-use Illuminate\Http\Request;
 
 class DepartmentsController extends Controller
 {
@@ -44,7 +43,8 @@ class DepartmentsController extends Controller
     {
         Department::create($request->all());
 
-        return redirect()->route('departments.index')->with('status', 'Department added!');
+        return redirect()->route('departments.index')
+            ->with('status', 'Department added!');
     }
 
     /**
@@ -82,7 +82,8 @@ class DepartmentsController extends Controller
 
         $department->update($request->all());
 
-        return redirect()->route('departments.index')->with('status', 'Department updated!');
+        return redirect()->route('departments.index')
+            ->with('status', 'Department updated!');
     }
 
     /**
@@ -98,6 +99,7 @@ class DepartmentsController extends Controller
 
         $department->delete();
 
-        return redirect()->route('departments.index')->with('status', 'Department deleted!');
+        return redirect()->route('departments.index')
+            ->with('status', 'Department deleted!');
     }
 }
