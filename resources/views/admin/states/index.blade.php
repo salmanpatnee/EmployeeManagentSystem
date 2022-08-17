@@ -3,7 +3,7 @@
 @section('content')
     <h1 class="mt-4">States</h1>
     <ol class="breadcrumb mb-4">
-        <li class="breadcrumb-item"><a href="{{ route('home') }}">Dashboard</a></li>
+        <li class="breadcrumb-item"><a href="/employees">Dashboard</a></li>
         <li class="breadcrumb-item active">States</li>
     </ol>
     <div class="container">
@@ -21,7 +21,7 @@
             </div>
             <div class="col-md-6">
                 @can('create', App\Models\State::class)
-                    <a class="btn btn-primary" href="{{ route('states.create') }}">Add state</a>
+                    <a class="btn btn-primary float-end" href="{{ route('states.create') }}">Add state</a>
                 @endcan
             </div>
         </div>

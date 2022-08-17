@@ -3,7 +3,7 @@
 @section('content')
     <h1 class="mt-4">Edit Country</h1>
     <ol class="breadcrumb mb-4">
-        <li class="breadcrumb-item"><a href="{{ route('home') }}">Dashboard</a></li>
+        <li class="breadcrumb-item"><a href="/employees">Dashboard</a></li>
         <li class="breadcrumb-item"><a href="{{ route('countries.index') }}">All Countries</a></li>
         <li class="breadcrumb-item active">Edit Country</li>
     </ol>

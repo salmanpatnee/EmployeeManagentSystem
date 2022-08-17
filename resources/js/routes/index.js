@@ -8,6 +8,8 @@ Vue.use(VueRouter);
 
 const Routes = new VueRouter({
     routes: [
+        { path: '/', component: Employees, name: 'app' },
+
         { path: '/employees', component: Employees, name: 'employees.index' },
         { path: '/employees/create', component: EmployeesCreate, name: 'employees.create' },
         { path: '/employees/edit/:id', component: EmployeesEdit, name: 'employees.edit' },

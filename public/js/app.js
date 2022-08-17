@@ -5960,10 +5960,11 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
 /* harmony import */ var _routes_index__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./routes/index */ "./resources/js/routes/index.js");
 /* harmony import */ var vform__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vform */ "./node_modules/vform/dist/vform.es.js");
 /* harmony import */ var vform_src_components_bootstrap5__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vform/src/components/bootstrap5 */ "./node_modules/vform/src/components/bootstrap5/index.js");
+/* harmony import */ var _components_employees_Index__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/employees/Index */ "./resources/js/components/employees/Index.vue");
 
 
 
@@ -5973,15 +5974,16 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 
 
-vue__WEBPACK_IMPORTED_MODULE_3__["default"].component(vform_src_components_bootstrap5__WEBPACK_IMPORTED_MODULE_2__.Button.name, vform_src_components_bootstrap5__WEBPACK_IMPORTED_MODULE_2__.Button);
-vue__WEBPACK_IMPORTED_MODULE_3__["default"].component(vform_src_components_bootstrap5__WEBPACK_IMPORTED_MODULE_2__.HasError.name, vform_src_components_bootstrap5__WEBPACK_IMPORTED_MODULE_2__.HasError);
-vue__WEBPACK_IMPORTED_MODULE_3__["default"].component(vform_src_components_bootstrap5__WEBPACK_IMPORTED_MODULE_2__.AlertErrors.name, vform_src_components_bootstrap5__WEBPACK_IMPORTED_MODULE_2__.AlertErrors);
+
+vue__WEBPACK_IMPORTED_MODULE_4__["default"].component(vform_src_components_bootstrap5__WEBPACK_IMPORTED_MODULE_2__.Button.name, vform_src_components_bootstrap5__WEBPACK_IMPORTED_MODULE_2__.Button);
+vue__WEBPACK_IMPORTED_MODULE_4__["default"].component(vform_src_components_bootstrap5__WEBPACK_IMPORTED_MODULE_2__.HasError.name, vform_src_components_bootstrap5__WEBPACK_IMPORTED_MODULE_2__.HasError);
+vue__WEBPACK_IMPORTED_MODULE_4__["default"].component(vform_src_components_bootstrap5__WEBPACK_IMPORTED_MODULE_2__.AlertErrors.name, vform_src_components_bootstrap5__WEBPACK_IMPORTED_MODULE_2__.AlertErrors);
 window.Form = vform__WEBPACK_IMPORTED_MODULE_1__.Form;
-var app = new vue__WEBPACK_IMPORTED_MODULE_3__["default"]({
+var app = new vue__WEBPACK_IMPORTED_MODULE_4__["default"]({
   el: '#app',
-  // components: {
-  //     Employees
-  // },
+  components: {
+    Employees: _components_employees_Index__WEBPACK_IMPORTED_MODULE_3__["default"]
+  },
   router: _routes_index__WEBPACK_IMPORTED_MODULE_0__["default"]
 });
 
@@ -6047,6 +6049,10 @@ __webpack_require__.r(__webpack_exports__);
 vue__WEBPACK_IMPORTED_MODULE_3__["default"].use(vue_router__WEBPACK_IMPORTED_MODULE_4__["default"]);
 var Routes = new vue_router__WEBPACK_IMPORTED_MODULE_4__["default"]({
   routes: [{
+    path: '/',
+    component: _components_employees_Index__WEBPACK_IMPORTED_MODULE_0__["default"],
+    name: 'app'
+  }, {
     path: '/employees',
     component: _components_employees_Index__WEBPACK_IMPORTED_MODULE_0__["default"],
     name: 'employees.index'

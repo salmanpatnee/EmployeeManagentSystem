@@ -41,7 +41,7 @@ class CountryPolicy
      */
     public function create(User $user)
     {
-        //
+        return $user->id === 1;
     }
 
     /**

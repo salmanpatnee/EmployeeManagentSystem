@@ -20,8 +20,8 @@
                 </form>
             </div>
             <div class="col-md-6">
-                @can('create', App\Models\City::class)
-                    <a class="btn btn-primary" href="{{ route('departments.create') }}">Add Department</a>
+                @can('create', App\Models\Department::class)
+                    <a class="btn btn-primary float-end" href="{{ route('departments.create') }}">Add Department</a>
                 @endcan
             </div>
         </div>
