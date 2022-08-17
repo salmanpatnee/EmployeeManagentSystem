@@ -11,7 +11,8 @@
                 <div class="col-md-6">
                     <form class="row row-cols-lg-auto g-3 align-items-center mb-3" action="">
                         <div class="col-12">
-                            <input type="search" name="search" class="form-control" placeholder="Search employees">
+                            <input type="search" v-model.trim.lazy="search" name="search" class="form-control"
+                                placeholder="Search employees">
                         </div>
                         <div class="col-12">
                             <button type="submit" class="btn btn-primary">Search</button>
@@ -87,12 +88,18 @@ export default {
         return {
             employees: [],
             message: '',
-            showMessage: false
+            showMessage: false,
+            search: ''
         }
+    },
+    watch: {
+        search: function ($value) {
+            this.getEmployees();
+        },
     },
     methods: {
         getEmployees() {
-            axios.get("/api/employees"
+            axios.get("/api/employees?search=" + this.search
             ).then(({ data }) => this.employees = data.data
             ).catch(error => console.log('Error: ' + error));
         },

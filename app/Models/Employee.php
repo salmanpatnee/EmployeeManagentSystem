@@ -60,4 +60,17 @@ class Employee extends Model
     {
         return $this->belongsTo(City::class);
     }
+
+    public function scopeSearch($query, $term)
+    {
+        $term = "%$term%";
+
+        $query->where(function ($query) use ($term) {
+            $query->where('first_name', 'like', $term)
+                ->orWhere('middle_name', 'like', $term)
+                ->orWhere('last_name', 'like', $term)
+                ->orWhere('address', 'like', $term)
+                ->orWhere('zip_code', 'like', $term);
+        });
+    }
 }

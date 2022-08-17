@@ -5905,19 +5905,26 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
       employees: [],
       message: '',
-      showMessage: false
+      showMessage: false,
+      search: ''
     };
+  },
+  watch: {
+    search: function search($value) {
+      this.getEmployees();
+    }
   },
   methods: {
     getEmployees: function getEmployees() {
       var _this = this;
 
-      axios.get("/api/employees").then(function (_ref) {
+      axios.get("/api/employees?search=" + this.search).then(function (_ref) {
         var data = _ref.data;
         return _this.employees = data.data;
       })["catch"](function (error) {
@@ -52856,7 +52863,47 @@ var render = function () {
     _vm._v(" "),
     _c("div", { staticClass: "container" }, [
       _c("div", { staticClass: "row" }, [
-        _vm._m(1),
+        _c("div", { staticClass: "col-md-6" }, [
+          _c(
+            "form",
+            {
+              staticClass: "row row-cols-lg-auto g-3 align-items-center mb-3",
+              attrs: { action: "" },
+            },
+            [
+              _c("div", { staticClass: "col-12" }, [
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model.trim.lazy",
+                      value: _vm.search,
+                      expression: "search",
+                      modifiers: { trim: true, lazy: true },
+                    },
+                  ],
+                  staticClass: "form-control",
+                  attrs: {
+                    type: "search",
+                    name: "search",
+                    placeholder: "Search employees",
+                  },
+                  domProps: { value: _vm.search },
+                  on: {
+                    change: function ($event) {
+                      _vm.search = $event.target.value.trim()
+                    },
+                    blur: function ($event) {
+                      return _vm.$forceUpdate()
+                    },
+                  },
+                }),
+              ]),
+              _vm._v(" "),
+              _vm._m(1),
+            ]
+          ),
+        ]),
         _vm._v(" "),
         _c(
           "div",
@@ -53001,33 +53048,11 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-md-6" }, [
+    return _c("div", { staticClass: "col-12" }, [
       _c(
-        "form",
-        {
-          staticClass: "row row-cols-lg-auto g-3 align-items-center mb-3",
-          attrs: { action: "" },
-        },
-        [
-          _c("div", { staticClass: "col-12" }, [
-            _c("input", {
-              staticClass: "form-control",
-              attrs: {
-                type: "search",
-                name: "search",
-                placeholder: "Search employees",
-              },
-            }),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-12" }, [
-            _c(
-              "button",
-              { staticClass: "btn btn-primary", attrs: { type: "submit" } },
-              [_vm._v("Search")]
-            ),
-          ]),
-        ]
+        "button",
+        { staticClass: "btn btn-primary", attrs: { type: "submit" } },
+        [_vm._v("Search")]
       ),
     ])
   },
